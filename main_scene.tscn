@@ -1,0 +1,36 @@
+[gd_scene load_steps=5 format=3 uid="uid://crsxj3mmxemqh"]
+
+[ext_resource type="ArrayMesh" uid="uid://dmbydjoesqm27" path="res://plane.obj" id="1_2c62f"]
+[ext_resource type="Shader" uid="uid://cy5ayohbl5tke" path="res://shaders/level_9.gdshader" id="2_gyfs4"]
+[ext_resource type="Texture2D" uid="uid://cjec3gbmhpmjt" path="res://noise.png" id="3_gyfs4"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_d5x1h"]
+render_priority = 0
+shader = ExtResource("2_gyfs4")
+shader_parameter/noise_texture = ExtResource("3_gyfs4")
+shader_parameter/scroll_speed = 0.2000000095
+shader_parameter/noise_scale = 0.574000027265
+shader_parameter/scroll_speed2 = 0.25200001197
+shader_parameter/noise_scale2 = 0.910000043225
+shader_parameter/colour = Color(0.00019194544, 0.336204, 0.98765737, 1)
+shader_parameter/light_colour = Color(0.7847526, 0.91410804, 0.9842301, 1)
+shader_parameter/dark_colour = Color(1.2032687e-07, 0.26028472, 0.40087077, 1)
+shader_parameter/wave_height = 0.1290000061275
+shader_parameter/wave_speed = 0.0630000029925
+shader_parameter/wave_frequency = 2.6390001253525
+shader_parameter/wave_count = 15
+shader_parameter/foam_height = -0.0649999912125
+shader_parameter/depth_height = -0.10899999330249999
+shader_parameter/smoothness = 0.1790000085025
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Plane" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0060558915, -0.005016446, 0.011511564)
+gi_mode = 0
+mesh = ExtResource("1_2c62f")
+surface_material_override/0 = SubResource("ShaderMaterial_d5x1h")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.86636555, -0.43873227, 0.23858912, 0, 0.47774157, 0.8785004, -0.49941042, -0.7611025, 0.41389883, 0.71015716, 1.5085508, 0.8610057)
+light_energy = 3.33
